@@ -1,0 +1,117 @@
+.todo-container{
+    background-color: white;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow:0 0 10px rgba(0, 0, 0, 0.1) ;
+    margin-top: 30px;
+}
+.todo-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: baseline;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+
+
+.todo-form{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+
+.todo-button{
+    padding: 10px 15px;
+    font-size: 16px;
+    background-color: #1d72b8;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.todo-button:hover {
+  background-color: #125ea9;
+}
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1999;
+}
+
+.popup-form {
+  background: #fff;
+  padding: 20px 30px;
+  border-radius: 10px;
+  width: 300px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  padding: 50px;
+}
+
+.popup-form h3 {
+  margin-top: 0;
+  color: #5ba3eb;
+}
+
+.popup-form input,
+.popup-form select {
+  width: 100%;
+  margin: 10px 0;
+  padding: 8px;
+  font-size: 14px;
+ 
+  
+}
+
+.popup-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  border-radius: 14px;
+}
+
+.popup-buttons button {
+  padding: 8px 12px;
+  font-size: 14px;
+  cursor: pointer;
+background-color: transparent;
+   
+}
+
+.addBtn{
+  border-color: #5a94ce;
+  border-radius: 14px;
+  color: #125ea9;
+}
+
+.addBtn:hover{
+  border-color: #5a94ce;
+  border-radius: 14px;
+  color: #ffffff;
+  background-color: #125ea9;
+}
+
+.cancelBtn{
+  border-color: rgb(247, 189, 189);
+  border-radius: 14px;
+  color: red;
+}
+
+.cancelBtn:hover{
+  border-color: rgb(247, 189, 189);
+  border-radius: 14px;
+  color: white;
+  background-color: rgb(137, 4, 4);
+}

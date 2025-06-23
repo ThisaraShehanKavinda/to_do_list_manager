@@ -1,4 +1,5 @@
 .todo-card {
+  position: relative;
   flex: 0 0 calc(25% - 20px);
   box-sizing: border-box;
   background-color: #eaf9fa;
@@ -8,7 +9,8 @@
   min-height: 180px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
+   border-left: 6px solid rgb(77, 130, 143);
 }
 
 
@@ -38,10 +40,14 @@
 
 
 
-.todo-actions{
-    display: flex;
-    gap: 10px;
+.todo-actions {
+  position: absolute;
+  bottom: 15px;
+  right: 20px;
+  display: flex;
+  gap: 10px;
 }
+
 
 .icon-button{
     background:none;
@@ -68,4 +74,39 @@
 
 .delete-btn:hover{
     color: rgb(252, 32, 32);
+}
+
+
+
+.priority-badge {
+  position: absolute;
+  left: 12px;
+  bottom: 20px;
+  display: flex;
+  align-items: center;
+  font-size: 0.85rem;
+  padding: 4px 8px;
+  background-color: transparent;
+  
+}
+
+
+.priority-icon {
+  margin-right: 10px;
+}
+
+
+.priority-low .priority-text,
+.priority-low .priority-icon {
+  color: lightgreen;
+}
+
+.priority-medium .priority-text,
+.priority-medium .priority-icon {
+  color: orange;
+}
+
+.priority-high .priority-text,
+.priority-high .priority-icon {
+  color: orangered;
 }

@@ -1,67 +1,72 @@
 [
   {
     "id": 1,
-    "text": "Learn React",
-    "completed": false
+    "text": "Write blog post on AI trends",
+    "completed": false,
+    "priority": "high",
+    "dueDate": "2025-06-25"
   },
   {
     "id": 2,
-    "text": "Build a To-Do List App",
-    "completed": false
+    "text": "Prepare presentation for product launch",
+    "completed": false,
+    "priority": "medium",
+    "dueDate": "2025-06-27"
   },
   {
-    "id":3,
-    "text": "Meeting with the management",
-    "completed":false
+    "id": 3,
+    "text": "Reply to client emails",
+    "completed": false,
+    "priority": "low",
+    "dueDate": "2025-06-24"
   },
   {
-    "id":4,
-    "text": "Study 07th course of prompt Engineering",
-    "completed":true
+    "id": 4,
+    "text": "Refactor backend API code",
+    "completed": true,
+    "priority": "high",
+    "dueDate": "2025-06-26"
   },
   {
-    "id":5,
-    "text": "Deliver the art work of client 011",
-    "completed":true
+    "id": 5,
+    "text": "Review marketing campaign performance",
+    "completed": true,
+    "priority": "medium",
+    "dueDate": "2025-06-28"
   },
   {
     "id": 6,
-    "text": "Build a To-Do List App",
-    "completed": false
+    "text": "Buy birthday gift for team member",
+    "completed": false,
+    "priority": "low",
+    "dueDate": "2025-06-24"
   },
   {
-    "id":7,
-    "text": "Meeting with the management",
-    "completed":false
+    "id": 7,
+    "text": "Update project documentation",
+    "completed": true,
+    "priority": "medium",
+    "dueDate": "2025-06-29"
   },
   {
-    "id":8,
-    "text": "Study 07th course of prompt Engineering",
-    "completed":true
+    "id": 8,
+    "text": "Organize files on Google Drive",
+    "completed": false,
+    "priority": "low",
+    "dueDate": "2025-07-01"
   },
   {
-    "id":9,
-    "text": "Deliver the art work of client 011",
-    "completed":true
+    "id": 9,
+    "text": "Conduct team performance reviews",
+    "completed": false,
+    "priority": "high",
+    "dueDate": "2025-06-30"
   },
   {
     "id": 10,
-    "text": "Build a To-Do List App",
-    "completed": false
-  },
-  {
-    "id":11,
-    "text": "Meeting with the management",
-    "completed":false
-  },
-  {
-    "id":12,
-    "text": "Study 07th course of prompt Engineering",
-    "completed":true
-  },
-  {
-    "id":13,
-    "text": "Deliver the art work of client 011",
-    "completed":true
+    "text": "Research on potential partnership opportunities",
+    "completed": true,
+    "priority": "medium",
+    "dueDate": "2025-07-02"
   }
 ]
