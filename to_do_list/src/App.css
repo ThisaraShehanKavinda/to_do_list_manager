@@ -1,7 +1,9 @@
-.App{
-  font-family: Arial, Helvetica, sans-serif ;
+.App {
+  font-family: Arial, sans-serif;
   text-align: center;
- 
+  padding: 0px;
+  background-color: #eef9fc;
+  min-height: 100vh;
 }
 
 

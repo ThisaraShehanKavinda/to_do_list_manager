@@ -16,6 +16,7 @@
     font-weight: 700;
     color: #55b6f6;
     margin: 5px;
+    padding-left: 35px;
 }
 
 .header-right{
@@ -45,6 +46,7 @@
 
 .logout-btn{
     color: rgb(151, 13, 13);
+    
 }
 
 .logout-btn:hover{

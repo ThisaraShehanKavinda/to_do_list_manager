@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import todosData from '../data/todos.json'
+import TodoItem from '../components/TodoItem'
+import './TodoList.css'
 
 function TodoList() {
 
@@ -10,6 +12,26 @@ function TodoList() {
     useEffect(()=>{
         setTodos(todosData);
     },[]);
+
+//Delete Task------------------------------------------------------------
+    const handleDelete = (id) => {
+  setTodos((prevTodos) => prevTodos.filter((todo) => todo.id !== id));
+};
+
+
+//Edit task---------------------------------------------------------------
+
+const handleEdit = (id) => {
+  const newText = prompt("Edit the task:");
+  if (newText) {
+    setTodos((prevTodos) =>
+      prevTodos.map((todo) =>
+        todo.id === id ? { ...todo, text: newText } : todo
+      )
+    );
+  }
+};
+
 
     //To add task-----------------------------------------
     const addTodo = (e)=>{
@@ -39,15 +61,22 @@ function TodoList() {
     <div className='todo-container'>
         <form className='todo-form' onSubmit={addTodo}>
             <input type="text" placeholder='Add a new task' value={newTodo} onChange={(e)=> setNewTodo(e.target.value)} className='todo-input'/>
-            <button type='submit' className='todo-button'>Add</button>
+            <button type='submit' className='todo-button'>+ Add</button>
         </form>
 
 
-        <ul>
-            {todos.map((todo)=>(
-                <TodoItem key={todo.id} todo={todo} onToggle={toggleTodo}/>
-            ))}
-        </ul>
+       <div className="todo-list">
+  
+     {todos.map((todo) => (
+    <TodoItem
+      key={todo.id}
+      todo={todo}
+      onToggle={toggleTodo}
+      onDelete={handleDelete}
+      onEdit={handleEdit}
+    />
+  ))}
+</div>
       
     </div>
   )
