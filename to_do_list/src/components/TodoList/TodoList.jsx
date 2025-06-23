@@ -57,7 +57,7 @@ const handleEdit = (id) => {
         // Reset all fields
           setNewTodo("");
           setDueDate("");
-          setPriority("Medium");
+          setPriority("medium");
           setShowPopup(false);
         };
 
@@ -98,9 +98,9 @@ const handleEdit = (id) => {
           required
         />
         <select value={priority} onChange={(e) => setPriority(e.target.value)} required>
-          <option value="Low">Low</option>
-          <option value="Medium">Medium</option>
-          <option value="High">High</option>
+          <option value="low">Low</option>
+          <option value="medium">Medium</option>
+          <option value="high">High</option>
         </select>
         <div className="popup-buttons">
           <button className='addBtn' type="submit">Add Task</button>
