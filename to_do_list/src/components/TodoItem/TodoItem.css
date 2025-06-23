@@ -1,6 +1,6 @@
 .todo-card {
   position: relative;
-  flex: 0 0 calc(25% - 20px);
+  flex: 0 0 calc(33.333% - 20px);
   box-sizing: border-box;
   background-color: #eaf9fa;
   padding: 15px 20px;
@@ -32,10 +32,12 @@
 
 .todo-status.complete {
   background-color: #9beb9d; 
+  color: green;
 }
 
 .todo-status.incomplete {
   background-color: #f7a19b;
+  color: rgb(88, 3, 3);
 }
 
 
@@ -109,4 +111,16 @@
 .priority-high .priority-text,
 .priority-high .priority-icon {
   color: orangered;
+}
+
+
+.todo-dates{
+  font-size: 12px;
+  color: cadetblue;
+  margin: 10px;
+  gap: 5px;
+}
+
+.todo-date{
+margin-left: 10px;
 }

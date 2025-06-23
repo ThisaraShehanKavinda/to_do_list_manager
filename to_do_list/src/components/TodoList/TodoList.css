@@ -15,6 +15,12 @@
   margin-top: 20px;
 }
 
+.welcome-text{
+  font-size: 1.0rem;
+  color: #095199c9;
+  font-weight: 600;
+}
+
 
 
 .todo-form{
@@ -100,18 +106,18 @@ background-color: transparent;
   border-color: #5a94ce;
   border-radius: 14px;
   color: #ffffff;
-  background-color: #125ea9;
+  background-color: #52a4f6;
 }
 
 .cancelBtn{
   border-color: rgb(247, 189, 189);
   border-radius: 14px;
-  color: red;
+  color: rgb(204, 42, 42);
 }
 
 .cancelBtn:hover{
   border-color: rgb(247, 189, 189);
   border-radius: 14px;
   color: white;
-  background-color: rgb(137, 4, 4);
+  background-color: rgb(245, 97, 97);
 }
