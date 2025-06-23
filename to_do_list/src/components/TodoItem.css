@@ -15,13 +15,27 @@
 .todo-text{
     margin: 0;
     font-size: 18px;
+    color: rgb(41, 76, 104);
 }
 
-.todo-status{
-    margin: 5px 0 0;
-    font-size: 14px;
-    color: #666;
+.todo-status {
+  display: inline-block;
+  padding: 6px 12px;
+  font-size: 14px;
+  margin-top: 8px;
+  color: rgb(6, 1, 36);
+  font-weight: 500;
+  border-radius: 5px;
 }
+
+.todo-status.complete {
+  background-color: #9beb9d; 
+}
+
+.todo-status.incomplete {
+  background-color: #f7a19b;
+}
+
 
 
 .todo-actions{

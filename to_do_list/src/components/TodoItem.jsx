@@ -8,9 +8,10 @@ function TodoItem({ todo, onDelete, onEdit }) {
         <div className="todo-content">
             <div>
                 <h3 className="todo-text">{todo.text}</h3>
-                <p className="todo-status">
-                    Status:{todo.completed ? "Complete" : "Incomplete"}
+                <p className={`todo-status ${todo.completed ? "complete" : "incomplete"}`}>
+                          {todo.completed ? "Complete" : "Incomplete"}
                 </p>
+
             </div>
         </div>
 
