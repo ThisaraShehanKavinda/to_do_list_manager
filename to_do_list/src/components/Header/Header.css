@@ -1,0 +1,54 @@
+.Header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #ffffff, #cbeff1);
+    padding: 0.75rem 1.5rem;
+    border-radius: 12px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.title{
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #55b6f6;
+    margin: 5px;
+    padding-left: 35px;
+}
+
+.header-right{
+    display: flex;
+    gap: 1rem;
+}
+
+.btn{
+    display: flex;
+    align-items: center;
+    background-color:transparent;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    color: #0477c4;
+    transition: color 0.3s ease;
+}
+
+.btn:hover{
+    color: #2196f3;
+}
+
+.icon{
+    margin-right: 0.4rem;
+    font-size: 1.2rem;
+}
+
+.logout-btn{
+    color: rgb(151, 13, 13);
+    
+}
+
+.logout-btn:hover{
+    color: red;
+}

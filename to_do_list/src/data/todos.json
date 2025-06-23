@@ -1,0 +1,67 @@
+[
+  {
+    "id": 1,
+    "text": "Learn React",
+    "completed": false
+  },
+  {
+    "id": 2,
+    "text": "Build a To-Do List App",
+    "completed": false
+  },
+  {
+    "id":3,
+    "text": "Meeting with the management",
+    "completed":false
+  },
+  {
+    "id":4,
+    "text": "Study 07th course of prompt Engineering",
+    "completed":true
+  },
+  {
+    "id":5,
+    "text": "Deliver the art work of client 011",
+    "completed":true
+  },
+  {
+    "id": 6,
+    "text": "Build a To-Do List App",
+    "completed": false
+  },
+  {
+    "id":7,
+    "text": "Meeting with the management",
+    "completed":false
+  },
+  {
+    "id":8,
+    "text": "Study 07th course of prompt Engineering",
+    "completed":true
+  },
+  {
+    "id":9,
+    "text": "Deliver the art work of client 011",
+    "completed":true
+  },
+  {
+    "id": 10,
+    "text": "Build a To-Do List App",
+    "completed": false
+  },
+  {
+    "id":11,
+    "text": "Meeting with the management",
+    "completed":false
+  },
+  {
+    "id":12,
+    "text": "Study 07th course of prompt Engineering",
+    "completed":true
+  },
+  {
+    "id":13,
+    "text": "Deliver the art work of client 011",
+    "completed":true
+  }
+]
