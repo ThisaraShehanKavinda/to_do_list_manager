@@ -31,7 +31,7 @@
 }
 
 
-.todo-button{
+/* .todo-button{
     padding: 10px 15px;
     font-size: 16px;
     background-color: #1d72b8;
@@ -39,10 +39,50 @@
     border: none;
     border-radius: 10px;
     cursor: pointer;
+} */
+
+
+
+/* used UIVERSE */
+
+.todo-button{
+   padding: 15px 25px;
+ border: unset;
+ border-radius: 15px;
+ color: #2e55af;
+ z-index: 1;
+ background: #c0e8f5;
+ position: relative;
+ font-weight: 600;
+ font-size: 16px;
+ -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+ box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+ transition: all 250ms;
+ overflow: hidden;
+}
+
+.todo-button ::before{
+   content: "";
+ position: absolute;
+ top: 0;
+ left: 0;
+ height: 100%;
+ width: 0;
+ border-radius: 15px;
+ background-color: #212121;
+ z-index: -1;
+ -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+ box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+ transition: all 250ms
 }
 
 .todo-button:hover {
-  background-color: #125ea9;
+  background-color: #1c4f82;
+  color: #ffffff;
+}
+
+.todo-button:hover ::before{
+  width: 100%;
 }
 
 .popup-overlay {
@@ -152,6 +192,7 @@ background-color: transparent;
     right: 20px;
     border-radius: 50px;
     z-index: 2000;
+    font-size: 14px;
   }
 
 

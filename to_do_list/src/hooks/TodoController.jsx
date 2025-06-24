@@ -45,17 +45,25 @@ export const useTodoController = () => {
   };
 
   // Edit Todo
-  const handleEdit = (todo) => {
-    setEditTodo({ ...todo });
-    setIsEditing(true);
-  };
+const handleEdit = (todo) => {
+  setEditTodo({ ...todo });  
+  setIsEditing(true);
+};
 
-  const handleUpdate = () => {
-    setTodos((prev) =>
-      prev.map((todo) => (todo.id === editTodo.id ? editTodo : todo))
-    );
-    setIsEditing(false);
-  };
+
+const handleUpdate = () => {
+  if (!editTodo) return;
+
+  setTodos((prevTodos) =>
+    prevTodos.map((todo) =>
+      todo.id === editTodo.id ? editTodo : todo
+    )
+  );
+  setIsEditing(false);
+  setEditTodo(null);
+};
+
+
 
   // Delete Todo
   const handleDelete = (todo) => {

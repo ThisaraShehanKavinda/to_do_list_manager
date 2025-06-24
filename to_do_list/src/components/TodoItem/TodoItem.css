@@ -13,6 +13,10 @@
    border-left: 6px solid rgb(77, 130, 143);
 }
 
+.todo-card :hover{
+  scale: 2px;
+}
+
 
 .todo-text{
     margin: 0;
