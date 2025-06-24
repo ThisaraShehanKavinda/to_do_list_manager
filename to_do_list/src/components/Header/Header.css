@@ -14,7 +14,7 @@
 .title{
     font-size: 1.2rem;
     font-weight: 700;
-    color: #55b6f6;
+    color: #2481c0;
     margin: 5px;
     padding-left: 35px;
 }
@@ -51,4 +51,25 @@
 
 .logout-btn:hover{
     color: red;
+}
+
+@media (max-width: 480px){
+    .title{
+    font-size: 1.0rem;
+    font-weight: 700;
+    color: #2481c0;
+    margin: 5px;
+    padding-left: 0px;
+}
+
+.icon{
+    margin-right: 0rem;
+    font-size: 1.7rem;
+}
+.btn{
+  text-indent: -9999px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
 }
