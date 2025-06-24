@@ -1,24 +1,27 @@
 import React from 'react';
 import './SearchBar.css'; 
+import { FaSearch } from 'react-icons/fa';
+
 
 const SearchBar = ({ searchTerm, setSearchTerm }) => {
   return (
     
     
+  <div className="search-box">
+    <button className="btn-search">
+      <FaSearch />
+    </button>
 
-<div>
-	<label>Search</label>
-	<input
+    <input
       type="search"
-      id="search"
+      className="input-search"
       name="search"
       pattern=".*\S.*" required
       value={searchTerm}
-      onChange={(e) => setSearchTerm(e.target.value)}
-    />
-	<span className="caret"></span>
+      onChange={(e) => setSearchTerm(e.target.value)}/>
+  
 
-    {/* <input
+         {/* <input
       type="search"
       className="search-input"
       name="search"
@@ -26,7 +29,14 @@ const SearchBar = ({ searchTerm, setSearchTerm }) => {
       value={searchTerm}
       onChange={(e) => setSearchTerm(e.target.value)}
     /> */}
-</div>
+        </div>
+
+
+
+       
+
+    
+
 
 
    

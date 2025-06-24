@@ -46,8 +46,9 @@ function TodoList() {
       
       <p className="welcome-text">My Tasks</p>
       <form className="todo-form" onSubmit={addTodo}>
-         <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-        <SortControl sortOrder={sortOrder} setSortOrder={setSortOrder} />
+<SearchBar className="searchbtn" searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+<SortControl sortOrder={sortOrder} setSortOrder={setSortOrder} />
+
 
         <button
           type="button"

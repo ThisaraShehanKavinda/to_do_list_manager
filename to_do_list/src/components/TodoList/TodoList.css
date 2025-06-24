@@ -111,7 +111,7 @@
 
 .popup-form h3 {
   margin-top: 0;
-  color: #5ba3eb;
+  color: #0b61b7;
 }
 
 .popup-form input,
@@ -119,10 +119,10 @@
   width: 100%;
   margin: 10px 0;
   padding: 8px;
-  font-size: 14px;
+  font-size: 11px;
   border-radius: 12px;
   border-color: #52a4f6;
-  color: #125ea9;
+  color: #166bc1;
  
   
 }
@@ -136,7 +136,7 @@
 
 .popup-buttons button {
   padding: 8px 12px;
-  font-size: 14px;
+  font-size: 10px;
   cursor: pointer;
 background-color: transparent;
    
@@ -197,6 +197,17 @@ background-color: transparent;
     font-size: 14px;
     margin-right: 0px;
   }
+
+
+  .searchbtn {
+    display: none !important;
+   
+  
+}
+
+
+
+
 
 
 }
