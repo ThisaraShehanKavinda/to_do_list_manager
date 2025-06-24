@@ -25,14 +25,14 @@
 
 .todo-text{
     margin: 0;
-    font-size: 18px;
+    font-size: 13px;
     color: rgb(41, 76, 104);
 }
 
 .todo-status {
   display: inline-block;
   padding: 6px 12px;
-  font-size: 14px;
+  font-size: 10px;
   margin-top: 8px;
   color: rgb(6, 1, 36);
   font-weight: 500;
@@ -63,7 +63,7 @@
 .icon-button{
     background:none;
     border: none;
-    font-size: 18px;
+    font-size: 12px;
     cursor: pointer;
 }
 
@@ -95,7 +95,7 @@
   bottom: 20px;
   display: flex;
   align-items: center;
-  font-size: 0.85rem;
+  font-size: 0.65rem;
   padding: 4px 8px;
   background-color: transparent;
   
@@ -124,7 +124,7 @@
 
 
 .todo-dates{
-  font-size: 12px;
+  font-size: 10px;
   color: cadetblue;
   margin: 10px;
   gap: 5px;

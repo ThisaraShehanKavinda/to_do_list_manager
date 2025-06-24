@@ -12,7 +12,7 @@
 }
 
 .title{
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 700;
     color: #2481c0;
     margin: 5px;
@@ -29,7 +29,7 @@
     align-items: center;
     background-color:transparent;
     border: none;
-    font-size: 1rem;
+    font-size: 12px;
     cursor: pointer;
     color: #0477c4;
     transition: color 0.3s ease;
@@ -64,7 +64,7 @@
 
 .icon{
     margin-right: 0rem;
-    font-size: 1.7rem;
+    font-size: 1.5rem;
 }
 .btn{
   text-indent: -9999px;

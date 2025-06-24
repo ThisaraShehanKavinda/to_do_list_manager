@@ -5,7 +5,7 @@
     padding: 30px;
     border-radius: 8px;
     box-shadow:0 0 10px rgba(0, 0, 0, 0.1) ;
-    margin-top: 30px;
+    margin-top: 10px;
     
 }
 
@@ -47,7 +47,7 @@
 /* using UIVERSE */
 
 .todo-button{
-   padding: 15px 25px;
+   padding: 5px 25px;
  border: unset;
  border-radius: 15px;
  color: #2e55af;
@@ -55,7 +55,7 @@
  background: #c0e8f5;
  position: relative;
  font-weight: 600;
- font-size: 16px;
+ font-size: 13px;
  -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
  box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
  transition: all 250ms;
