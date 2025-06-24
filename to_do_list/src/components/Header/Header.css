@@ -62,7 +62,10 @@
     padding-left: 0px;
 }
 
-
+.icon{
+    margin-right: 0rem;
+    font-size: 1.7rem;
+}
 .btn{
   text-indent: -9999px;
   overflow: hidden;
