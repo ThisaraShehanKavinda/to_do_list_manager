@@ -14,4 +14,4 @@ Easily add, edit, delete, and sort tasks with a clean and responsive UI.
 ## 📸 Screenshots
 
 ### Wb View
-![web](Screenshots/ss-web-1.jpg)
+![web](Screenshots/ss-web-1.png)
