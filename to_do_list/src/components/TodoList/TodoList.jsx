@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import todosData from "../../data/todos.json";
 import TodoItem from "../TodoItem/TodoItem";
 import "./TodoList.css";
+import SortControl from "../SortControls/SortControl";
 
 function TodoList() {
   const [todos, setTodos] = useState([]);
@@ -16,6 +17,8 @@ function TodoList() {
 
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
   const [todoToDelete, setTodoToDelete] = useState(null);
+
+  const [sortOrder, setSortOrder] = useState("asc");
 
   useEffect(() => {
     setTodos(todosData);
@@ -82,9 +85,18 @@ function TodoList() {
     setShowPopup(false);
   };
 
+  //Sort Tasks
+  const sortedTodos = [...todos].sort((a, b) => {
+    const dateA = new Date(a.dueDate);
+    const dateB = new Date(b.dueDate);
+    return sortOrder === "asc" ? dateA - dateB : dateB - dateA;
+  });
+
   return (
     <div className="todo-container">
       <form className="todo-form" onSubmit={addTodo}>
+        
+        <SortControl sortOrder={sortOrder} setSortOrder={setSortOrder} />
         <p className="welcome-text">My To-Do List</p>
         <button
           type="button"
@@ -218,7 +230,7 @@ function TodoList() {
       )}
 
       <div className="todo-list">
-        {todos.map((todo) => (
+        {sortedTodos.map((todo) => (
           <TodoItem
             key={todo.id}
             todo={todo}
