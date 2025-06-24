@@ -10,11 +10,16 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-   border-left: 6px solid rgb(77, 130, 143);
+  transition: transform 0.2s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  border-left: 6px solid rgb(77, 130, 143);
+  cursor: pointer;
 }
 
-.todo-card :hover{
-  scale: 2px;
+.todo-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.12);
+  background-color: #dff4f5;
+  border-left: 6px solid rgb(47, 190, 226);
 }
 
 
@@ -67,11 +72,11 @@
 }
 
 .edit-btn{
-    color: rgb(4, 150, 28);
+    color: rgb(27, 71, 108);
 }
 
 .delete-btn{
-    color: rgb(175, 2, 2);
+    color: rgb(27, 71, 108);
 }
 
 .edit-btn:hover {

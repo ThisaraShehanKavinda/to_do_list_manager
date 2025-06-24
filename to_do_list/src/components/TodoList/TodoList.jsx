@@ -41,7 +41,7 @@ function TodoList() {
     <div className="todo-container">
 
       
-      <p className="welcome-text">My To-Do List</p>
+      <p className="welcome-text">My Tasks</p>
       <form className="todo-form" onSubmit={addTodo}>
         <SortControl sortOrder={sortOrder} setSortOrder={setSortOrder} />
 
