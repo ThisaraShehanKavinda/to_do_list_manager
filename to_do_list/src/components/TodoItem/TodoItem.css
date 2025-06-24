@@ -34,12 +34,12 @@
   border-radius: 5px;
 }
 
-.todo-status.complete {
+.todo-status.Complete {
   background-color: #9beb9d; 
   color: green;
 }
 
-.todo-status.incomplete {
+.todo-status.Incomplete {
   background-color: #f7a19b;
   color: rgb(88, 3, 3);
 }

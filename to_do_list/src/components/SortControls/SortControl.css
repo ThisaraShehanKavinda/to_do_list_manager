@@ -1,5 +1,5 @@
 .sort-controls {
-  margin: 10px 0;
+  margin: 10px 10px;
 }
 
 .sort-controls label {
@@ -14,4 +14,14 @@
     border-radius: 12px;
     width: 300px;
     border-color: rgb(165, 222, 240);
+}
+
+
+@media (max-width: 480px) {
+  .sort-controls label {
+  margin-right: 0px;
+ 
+  
+  
+}
 }

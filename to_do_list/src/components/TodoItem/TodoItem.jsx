@@ -14,7 +14,7 @@ function TodoItem({ todo, onDelete, onEdit }) {
                   <span className="todo-date">{todo.dueDate}</span>
                 </div>
                 
-                <p className={`todo-status ${todo.completed ? "complete" : "incomplete"}`}>
+                <p className={`todo-status ${todo.completed ? "Complete" : "Incomplete"}`}>
                           {todo.completed ? "Complete" : "Incomplete"}
                 </p>
 
@@ -22,7 +22,7 @@ function TodoItem({ todo, onDelete, onEdit }) {
         </div>
 
         <div className="todo-actions">
-            <button className="icon-button edit-btn" onClick={()=> onEdit(todo.id)}><FaEdit/></button>
+            <button className="icon-button edit-btn" onClick={()=> onEdit(todo)}><FaEdit/></button>
             <button className="icon-button delete-btn" onClick={()=> onDelete(todo.id)}><FaTrashAlt/></button>
         </div>
 
