@@ -124,3 +124,34 @@ background-color: transparent;
   color: white;
   background-color: rgb(245, 97, 97);
 }
+
+
+@media (max-width: 480px) {
+
+
+  .todo-container{
+    margin-top: 10px;
+  }
+
+  .popup-form {
+    width: 250px;
+  }
+
+  .todo-form {
+    display: block;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .todo-button {
+    position: fixed;
+    bottom: 20px;
+    height: 60px;
+    width: 90px;
+    right: 20px;
+    border-radius: 50px;
+    z-index: 2000;
+  }
+
+
+}

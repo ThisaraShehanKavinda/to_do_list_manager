@@ -52,3 +52,21 @@
 .logout-btn:hover{
     color: red;
 }
+
+@media (max-width: 480px){
+    .title{
+    font-size: 1.0rem;
+    font-weight: 700;
+    color: #2481c0;
+    margin: 5px;
+    padding-left: 0px;
+}
+
+
+.btn{
+  text-indent: -9999px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+}

@@ -1,4 +1,3 @@
-// DeleteConfirmPopup.jsx
 import React from 'react';
 
 const DeleteConfirmPopup = ({

@@ -124,3 +124,16 @@
 .todo-date{
 margin-left: 10px;
 }
+
+
+
+@media (max-width: 480px) {
+
+.todo-card {
+  
+  flex: 0 0 calc(100% - 20px);
+
+}
+  
+
+}
