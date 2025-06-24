@@ -16,7 +16,9 @@ export const useTodoController = () => {
 
   const [sortOrder, setSortOrder] = useState('asc');
 
-  // Load from localStorage
+  const [searchTerm, setSearchTerm] = useState("");
+
+  // Load from json file
   useEffect(() => {
     
     setTodos(todosData);
@@ -86,15 +88,21 @@ const handleUpdate = () => {
     );
   };
 
-  // Sort
-  const sortedTodos = [...todos].sort((a, b) => {
+ 
+
+  // Filtered and sorted todos
+const filteredAndSortedTodos = [...todos]
+  .filter((todo) =>
+    todo.text.toLowerCase().includes(searchTerm.toLowerCase())
+  )
+  .sort((a, b) => {
     const dateA = new Date(a.dueDate);
     const dateB = new Date(b.dueDate);
-    return sortOrder === 'asc' ? dateA - dateB : dateB - dateA;
+    return sortOrder === "asc" ? dateA - dateB : dateB - dateA;
   });
 
   return {
-    todos: sortedTodos,
+    todos: filteredAndSortedTodos,
     newTodo,
     dueDate,
     priority,
@@ -104,6 +112,9 @@ const handleUpdate = () => {
     showDeleteConfirm,
     todoToDelete,
     sortOrder,
+    searchTerm,
+    filteredAndSortedTodos,
+    
 
     setNewTodo,
     setDueDate,
@@ -113,6 +124,7 @@ const handleUpdate = () => {
     setIsEditing,
     setEditTodo,
     setShowDeleteConfirm,
+    setSearchTerm,
 
     addTodo,
     handleEdit,
@@ -120,5 +132,6 @@ const handleUpdate = () => {
     handleDelete,
     confirmDelete,
     toggleTodo,
+    
   };
 };

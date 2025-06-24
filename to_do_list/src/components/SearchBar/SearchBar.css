@@ -1,0 +1,113 @@
+input, .caret {
+	margin: auto;
+	display: block;
+	transition: all 0.25s linear;
+}
+
+input {
+	background: transparent;
+	border-radius: 50%;
+	box-shadow: 0 0 0 0.25em inset;
+	caret-color: #00f; /* example primary color */
+	width: 2em;
+	height: 2em;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+input:focus, input:valid {
+	background: #444; /* example input background */
+	border-radius: 0.25em;
+	box-shadow: none;
+	padding: 0.75em 1em;
+	transition-duration: 0.125s;
+	transition-delay: 0.125s;
+	width: 100%;
+	height: 3em;
+}
+
+input:focus {
+	animation: showCaret 0.5s steps(1);
+	outline: transparent;
+}
+
+input:focus + .caret, input:valid + .caret {
+	animation: handleToCaret 0.5s linear;
+	background: transparent;
+	width: 1px;
+	height: 1.5em;
+	transform: translate(0, -1em) rotate(-180deg) translate(7.5em, -0.25em);
+}
+
+input::-webkit-search-decoration {
+	-webkit-appearance: none;
+}
+
+label {
+	color: #e3e4e8;
+	overflow: hidden;
+	position: absolute;
+	width: 0;
+	height: 0;
+}
+
+.caret {
+	background: #e3e4e8;
+	border-radius: 0 0 0.125em 0.125em;
+	margin-bottom: -0.6em;
+	width: 0.25em;
+	height: 1em;
+	transform: translate(0, -1em) rotate(-45deg) translate(0, 0.875em);
+	transform-origin: 50% 0;
+}
+
+
+/* Animations */
+@keyframes showCaret {
+	from {
+		caret-color: transparent;
+	}
+	to {
+		caret-color: #00f; /* primary color */
+	}
+}
+
+@keyframes handleToCaret {
+	from {
+		background: #e3e4e8;
+		width: 0.25em;
+		height: 1em;
+		transform: translate(0, -1em) rotate(-45deg) translate(0, 0.875em);
+	}
+	25% {
+		background: #e3e4e8;
+		width: 0.25em;
+		height: 1em;
+		transform: translate(0, -1em) rotate(-180deg) translate(0, 0.875em);
+	}
+	50%, 62.5% {
+		background: #00f;
+		width: 1px;
+		height: 1.5em;
+		transform: translate(0, -1em) rotate(-180deg) translate(7.5em, 2.5em);
+	}
+	75%, 99% {
+		background: #00f;
+		width: 1px;
+		height: 1.5em;
+		transform: translate(0, -1em) rotate(-180deg) translate(7.5em, -0.25em);
+	}
+	87.5% {
+		background: #00f;
+		width: 1px;
+		height: 1.5em;
+		transform: translate(0, -1em) rotate(-180deg) translate(7.5em, 0.125em);
+	}
+	to {
+		background: transparent;
+		width: 1px;
+		height: 1.5em;
+		transform: translate(0, -1em) rotate(-180deg) translate(7.5em, -0.25em);
+	}
+}

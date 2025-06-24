@@ -6,6 +6,7 @@ import AddTaskPopup from "../AddTask/AddTaskPopup";
 import EditTaskPopup from "../EditTask/EditTaskPopup";
 import DeleteConfirmPopup from '../DeleteTask/DeleteTaskPopup'
 import { useTodoController } from "../../hooks/TodoController";
+import SearchBar from "../SearchBar/SearchBar";
 
 function TodoList() {
  const {
@@ -19,6 +20,7 @@ function TodoList() {
     showDeleteConfirm,
     todoToDelete,
     sortOrder,
+    searchTerm,
 
     setNewTodo,
     setDueDate,
@@ -28,6 +30,7 @@ function TodoList() {
     setIsEditing,
     setEditTodo,
     setShowDeleteConfirm,
+    setSearchTerm,
 
     addTodo,
     handleEdit,
@@ -43,6 +46,7 @@ function TodoList() {
       
       <p className="welcome-text">My Tasks</p>
       <form className="todo-form" onSubmit={addTodo}>
+         <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
         <SortControl sortOrder={sortOrder} setSortOrder={setSortOrder} />
 
         <button
