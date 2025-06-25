@@ -39,16 +39,16 @@ const EditTaskPopup = ({
           <option value="high">High</option>
         </select>
         <select
-          value={editTodo.Completed ? "Complete" : "Incomplete"}
+          value={editTodo.completed ? "complete" : "Incomplete"}
           onChange={(e) =>
             setEditTodo({
               ...editTodo,
-              Completed: e.target.value === "Complete",
+              completed: e.target.value === "complete",
             })
           }
         >
           <option value="Incomplete">Incomplete</option>
-          <option value="Complete">Complete</option>
+          <option value="complete">complete</option>
         </select>
         <div className="popup-buttons">
           <button className="addBtn" onClick={handleUpdate}>

@@ -39,7 +39,7 @@
   border-radius: 5px;
 }
 
-.todo-status.Complete {
+.todo-status.complete {
   background-color: #9beb9d; 
   color: green;
 }

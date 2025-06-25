@@ -36,7 +36,7 @@ export const useTodoController = () => {
       text: newTodo,
       dueDate,
       priority,
-      Completed: false,
+      completed: false,
     };
 
     setTodos([...todos, newItem]);
@@ -83,7 +83,7 @@ const handleUpdate = () => {
   const toggleTodo = (id) => {
     setTodos((prev) =>
       prev.map((todo) =>
-        todo.id === id ? { ...todo, Completed: !todo.Completed } : todo
+        todo.id === id ? { ...todo, completed: !todo.completed } : todo
       )
     );
   };
