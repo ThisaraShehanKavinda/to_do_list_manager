@@ -24,6 +24,17 @@
     gap: 1rem;
 }
 
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 32px;
+  height: 32px;
+  margin-right: 10px;
+}
+
 .btn{
     display: flex;
     align-items: center;
