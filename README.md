@@ -9,6 +9,7 @@ Easily add, edit, delete, and sort tasks with a clean and responsive UI.
 - Edit existing tasks
 - Delete tasks
 - Sort tasks
+- Search Task
 - Minimal and visually appealing design
 
 ## Getting Started
