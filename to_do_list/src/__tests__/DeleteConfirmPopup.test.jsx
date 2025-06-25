@@ -46,7 +46,7 @@ describe('DeleteConfirmPopup', () => {
     expect(screen.getByText('Test task')).toBeInTheDocument();
   });
 
-  test('calls confirmDelete when "Yes, Delete" button is clicked', () => {
+  test('calls confirmDelete when "Delete" button is clicked', () => {
     render(<DeleteConfirmPopup {...defaultProps} />);
     const yesButton = screen.getByText(/yes, delete/i);
     fireEvent.click(yesButton);
