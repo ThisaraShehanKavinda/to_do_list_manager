@@ -1,5 +1,6 @@
 import React from "react";
-import { FaTrashAlt, FaEdit,FaFlag, FaCalendar } from "react-icons/fa";
+import { FaTrashAlt, FaEdit, FaFlag, FaCalendar } from "react-icons/fa";
+
 import './TodoItem.css'
 
 function TodoItem({ todo, onDelete, onEdit }) {
@@ -18,8 +19,14 @@ function TodoItem({ todo, onDelete, onEdit }) {
                           {todo.completed ? "complete" : "Incomplete"}
                 </p>
 
+
+
+
             </div>
+
+            
         </div>
+        
 
         <div className="todo-actions">
             <button className="icon-button edit-btn" onClick={()=> onEdit(todo)}><FaEdit/></button>
@@ -31,6 +38,8 @@ function TodoItem({ todo, onDelete, onEdit }) {
         <FaFlag className="priority-icon" />
         <span className="priority-text"> {todo.priority}</span>
       </div>
+
+
     </div>
   );
 }
