@@ -1,5 +1,7 @@
 .sort-controls {
   margin: 10px 10px;
+  left: 35%;
+  
 }
 
 .sort-controls label {
@@ -23,5 +25,12 @@
  
   
   
+}
+
+
+.sort-controls {
+  margin: 10px 10px;
+  left: 0%;
+  position:relative;
 }
 }
