@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1750845698617" clover="3.2.0">
-  <project timestamp="1750845698617" name="All files">
-    <metrics statements="87" coveredstatements="67" conditionals="36" coveredconditionals="24" methods="42" coveredmethods="27" elements="165" coveredelements="118" complexity="0" loc="87" ncloc="87" packages="11" files="12" classes="12"/>
+<coverage generated="1750851242439" clover="3.2.0">
+  <project timestamp="1750851242439" name="All files">
+    <metrics statements="87" coveredstatements="81" conditionals="36" coveredconditionals="26" methods="42" coveredmethods="37" elements="165" coveredelements="144" complexity="0" loc="87" ncloc="87" packages="11" files="12" classes="12"/>
     <package name="src">
       <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
       <file name="App.jsx" path="C:\Users\thisarak\Documents\task\to_do_list_manager\to_do_list\src\App.jsx">
@@ -51,48 +51,48 @@
       </file>
     </package>
     <package name="src.components.Header">
-      <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <file name="Header.jsx" path="C:\Users\thisarak\Documents\task\to_do_list_manager\to_do_list\src\components\Header\Header.jsx">
-        <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-        <line num="7" count="0" type="stmt"/>
-        <line num="8" count="0" type="stmt"/>
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="4" type="stmt"/>
       </file>
     </package>
     <package name="src.components.SearchBar">
-      <metrics statements="3" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+      <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
       <file name="SearchBar.jsx" path="C:\Users\thisarak\Documents\task\to_do_list_manager\to_do_list\src\components\SearchBar\SearchBar.jsx">
-        <metrics statements="3" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
-        <line num="6" count="0" type="stmt"/>
-        <line num="7" count="0" type="stmt"/>
-        <line num="21" count="0" type="stmt"/>
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="3" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
       </file>
     </package>
     <package name="src.components.SortControls">
-      <metrics statements="3" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+      <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
       <file name="SortControl.jsx" path="C:\Users\thisarak\Documents\task\to_do_list_manager\to_do_list\src\components\SortControls\SortControl.jsx">
-        <metrics statements="3" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
-        <line num="4" count="0" type="stmt"/>
-        <line num="5" count="0" type="stmt"/>
-        <line num="8" count="0" type="stmt"/>
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="3" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
       </file>
     </package>
     <package name="src.components.TodoItem">
-      <metrics statements="3" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="3" coveredmethods="0"/>
+      <metrics statements="3" coveredstatements="3" conditionals="4" coveredconditionals="2" methods="3" coveredmethods="3"/>
       <file name="TodoItem.jsx" path="C:\Users\thisarak\Documents\task\to_do_list_manager\to_do_list\src\components\TodoItem\TodoItem.jsx">
-        <metrics statements="3" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="3" coveredmethods="0"/>
-        <line num="7" count="0" type="stmt"/>
-        <line num="32" count="0" type="stmt"/>
-        <line num="33" count="0" type="stmt"/>
+        <metrics statements="3" coveredstatements="3" conditionals="4" coveredconditionals="2" methods="3" coveredmethods="3"/>
+        <line num="7" count="6" type="stmt"/>
+        <line num="32" count="1" type="stmt"/>
+        <line num="33" count="1" type="stmt"/>
       </file>
     </package>
     <package name="src.components.TodoList">
-      <metrics statements="5" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="0"/>
+      <metrics statements="5" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="2"/>
       <file name="TodoList.jsx" path="C:\Users\thisarak\Documents\task\to_do_list_manager\to_do_list\src\components\TodoList\TodoList.jsx">
-        <metrics statements="5" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="0"/>
-        <line num="41" count="0" type="stmt"/>
-        <line num="43" count="0" type="stmt"/>
+        <metrics statements="5" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="2"/>
+        <line num="41" count="5" type="stmt"/>
+        <line num="43" count="5" type="stmt"/>
         <line num="56" count="0" type="stmt"/>
-        <line num="100" count="0" type="stmt"/>
+        <line num="100" count="5" type="stmt"/>
         <line num="104" count="0" type="stmt"/>
       </file>
     </package>

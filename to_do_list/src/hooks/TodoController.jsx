@@ -90,7 +90,7 @@ const handleUpdate = () => {
 
  
 
-  // Filtered and sorted todos
+  // Filtered and sorted todos (create filter and sorting both together)
 const filteredAndSortedTodos = [...todos]
   .filter((todo) =>
     todo.text.toLowerCase().includes(searchTerm.toLowerCase())

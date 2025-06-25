@@ -6,7 +6,7 @@ import todoLogo from '../../assets/to-do-list.png';
 
 const Header = () => {
   return (
-<div className='Header'>
+<div className='Header' role="banner">
   <div className="header-left">
     <img src={todoLogo} alt="To-Do Logo" className="logo" />
     <p className='title'>To-Do List Manager</p>

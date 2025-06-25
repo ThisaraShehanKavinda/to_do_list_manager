@@ -95,9 +95,9 @@ function TodoList() {
         setShowDeleteConfirm={setShowDeleteConfirm}
       />
 
-      <div className="todo-list">
+      <div className="todo-list" ata-testid="todo-list" >
         {sortedTodos.map((todo) => (
-          <TodoItem
+          <TodoItem ata-testid="todo-list"
             key={todo.id}
             todo={todo}
             onToggle={toggleTodo}

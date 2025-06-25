@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/3</span>
+                <span class='fraction'>3/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/4</span>
+                <span class='fraction'>2/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/3</span>
+                <span class='fraction'>3/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/3</span>
+                <span class='fraction'>3/3</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -117,7 +117,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -142,8 +142,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -164,8 +164,8 @@ import { FaTrashAlt, FaEdit, FaFlag, FaCalendar } from "react-icons/fa";
 &nbsp;
 import './TodoItem.css'
 &nbsp;
-function <span class="fstat-no" title="function not covered" >TodoItem(</span>{ todo, onDelete, onEdit }) {
-<span class="cstat-no" title="statement not covered" >  return (</span>
+function TodoItem({ todo, onDelete, onEdit }) {
+  return (
     &lt;div className="todo-card"&gt;
         &lt;div className="todo-content"&gt;
             &lt;div&gt;
@@ -176,8 +176,8 @@ function <span class="fstat-no" title="function not covered" >TodoItem(</span>{ 
                   &lt;span className="todo-date"&gt;{todo.dueDate}&lt;/span&gt;
                 &lt;/div&gt;
                 
-                &lt;p className={`todo-status ${todo.completed ? "complete" : "Incomplete"}`}&gt;
-                          {todo.completed ? "complete" : "Incomplete"}
+                &lt;p className={`todo-status ${todo.completed ? <span class="branch-0 cbranch-no" title="branch not covered" >"complete" </span>: "Incomplete"}`}&gt;
+                          {todo.completed ? <span class="branch-0 cbranch-no" title="branch not covered" >"complete" </span>: "Incomplete"}
                 &lt;/p&gt;
 &nbsp;
 &nbsp;
@@ -190,8 +190,8 @@ function <span class="fstat-no" title="function not covered" >TodoItem(</span>{ 
         
 &nbsp;
         &lt;div className="todo-actions"&gt;
-            &lt;button className="icon-button edit-btn" onClick={<span class="fstat-no" title="function not covered" >()</span>=&gt; <span class="cstat-no" title="statement not covered" >onEdit(todo)}</span>&gt;&lt;FaEdit/&gt;&lt;/button&gt;
-            &lt;button className="icon-button delete-btn" onClick={<span class="fstat-no" title="function not covered" >()</span>=&gt; <span class="cstat-no" title="statement not covered" >onDelete(todo.id)}</span>&gt;&lt;FaTrashAlt/&gt;&lt;/button&gt;
+            &lt;button className="icon-button edit-btn" aria-label="Edit Todo"  onClick={()=&gt; onEdit(todo)}&gt;&lt;FaEdit/&gt;&lt;/button&gt;
+            &lt;button className="icon-button delete-btn" aria-label="Delete Todo" onClick={()=&gt; onDelete(todo.id)}&gt;&lt;FaTrashAlt/&gt;&lt;/button&gt;
         &lt;/div&gt;
 &nbsp;
 &nbsp;
@@ -214,7 +214,7 @@ export default TodoItem;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-06-25T10:01:38.503Z
+                at 2025-06-25T11:34:02.339Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

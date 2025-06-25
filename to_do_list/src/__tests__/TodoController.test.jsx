@@ -238,14 +238,14 @@ describe("useTodoController Hook", () => {
     render(<HookWrapper />);
     const toggleSortButton = screen.getByText(/Toggle Sort Order/i);
 
-    // Initially ascending
+    //  ascending
     let todos = screen.getAllByRole("listitem");
     let dates = todos.map((todo) => todo.textContent);
-    // Just checking order changed on toggle
+    // checking order changed on toggle
 
     fireEvent.click(toggleSortButton);
 
-    // Now descending
+    // descending
     const todosDesc = screen.getAllByRole("listitem");
     const datesDesc = todosDesc.map((todo) => todo.textContent);
 
