@@ -29,8 +29,8 @@ function TodoItem({ todo, onDelete, onEdit }) {
         
 
         <div className="todo-actions">
-            <button className="icon-button edit-btn" onClick={()=> onEdit(todo)}><FaEdit/></button>
-            <button className="icon-button delete-btn" onClick={()=> onDelete(todo.id)}><FaTrashAlt/></button>
+            <button className="icon-button edit-btn" aria-label="Edit Todo"  onClick={()=> onEdit(todo)}><FaEdit/></button>
+            <button className="icon-button delete-btn" aria-label="Delete Todo" onClick={()=> onDelete(todo.id)}><FaTrashAlt/></button>
         </div>
 
 

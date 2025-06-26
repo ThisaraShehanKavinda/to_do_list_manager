@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const AddTaskPopup = ({
   showPopup,
@@ -9,7 +9,7 @@ const AddTaskPopup = ({
   setDueDate,
   setPriority,
   addTodo,
-  setShowPopup
+  setShowPopup,
 }) => {
   if (!showPopup) return null;
 
@@ -23,17 +23,21 @@ const AddTaskPopup = ({
             placeholder="Task name"
             value={newTodo}
             onChange={(e) => setNewTodo(e.target.value)}
+            aria-label="task name"
             required
           />
           <input
             type="date"
             value={dueDate}
             onChange={(e) => setDueDate(e.target.value)}
+            aria-label="due date"
+            data-testid="due-date-input"
             required
           />
           <select
-            value={priority}
+            value={priority || "low"}
             onChange={(e) => setPriority(e.target.value)}
+            aria-label="priority"
             required
           >
             <option value="low">Low</option>
