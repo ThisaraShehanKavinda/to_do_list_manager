@@ -1,6 +1,6 @@
 .todo-container{
     background-color: white;
-    max-width: 1400px;
+    max-width: 1500px;
     margin: 0 auto;
     padding: 30px;
     border-radius: 8px;
@@ -47,7 +47,7 @@
 
 /* using UIVERSE */
 
-.fab-button {
+.add-button {
   position: fixed;
   bottom: 60px;
   right: 60px;
@@ -68,18 +68,18 @@
   position: fixed;
 }
 
-.fab-button:hover {
+.add-button:hover {
   background-color: #1c4f82;
   transform: scale(1.05);
 }
 
 /* Central icon */
-.fab-icon {
+.add-icon {
   font-size: 24px;
 }
 
 /* Bottom-left small plus */
-.fab-plus {
+.add-plus {
   position: absolute;
   bottom: 2px;
   left: 2px;
@@ -116,6 +116,7 @@
   width: 300px;
   box-shadow: 0 2px 10px rgba(0,0,0,0.2);
   padding: 50px;
+  color: #04465d;
 }
 
 .popup-form h3 {
@@ -129,7 +130,7 @@
   margin: 10px 0;
   padding: 8px;
   font-size: 11px;
-  border-radius: 12px;
+  border-radius: 5px;
   border-color: #52a4f6;
   color: #166bc1;
  
@@ -140,7 +141,7 @@
   display: flex;
   justify-content: space-between;
   margin-top: 10px;
-  border-radius: 14px;
+  border-radius: 5px;
 }
 
 .popup-buttons button {
@@ -153,26 +154,26 @@ background-color: transparent;
 
 .addBtn{
   border-color: #5a94ce;
-  border-radius: 14px;
+  border-radius: 4px;
   color: #125ea9;
 }
 
 .addBtn:hover{
   border-color: #5a94ce;
-  border-radius: 14px;
+  border-radius: 4px;
   color: #ffffff;
   background-color: #52a4f6;
 }
 
 .cancelBtn{
   border-color: rgb(247, 189, 189);
-  border-radius: 14px;
+  border-radius: 4px;
   color: rgb(204, 42, 42);
 }
 
 .cancelBtn:hover{
   border-color: rgb(247, 189, 189);
-  border-radius: 14px;
+  border-radius: 4px;
   color: white;
   background-color: rgb(245, 97, 97);
 }
@@ -196,18 +197,18 @@ background-color: transparent;
     margin-bottom: 20px;
   }
 
- .fab-button {
+ .add-button {
     width: 50px;
     height: 50px;
     right: 35px;
     bottom: 35px;
   }
 
-  .fab-icon {
+  .add-icon {
     font-size: 24px;
   }
 
-  .fab-plus {
+  .add-plus {
     width: 16px;
     height: 16px;
     font-size: 8px;

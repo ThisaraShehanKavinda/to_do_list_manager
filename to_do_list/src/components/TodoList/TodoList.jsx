@@ -65,11 +65,11 @@ function TodoList() {
 
       <button
         type="button"
-        className="fab-button"
+        className="add-button"
         onClick={() => setShowPopup(true)}
       >
-        <FaTasks className="fab-icon" />
-        <span className="fab-plus">
+        <FaTasks className="add-icon" />
+        <span className="add-plus">
           <FaPlus />
         </span>
       </button>
