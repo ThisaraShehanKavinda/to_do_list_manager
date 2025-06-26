@@ -1,7 +1,7 @@
 # To-Do List Manager
 
 A minimal and modern To-Do List Manager built with React.  
-Easily add, edit, delete, and sort tasks with a clean and responsive UI.
+Easily add, edit, delete, search, filter and sort tasks with a clean and responsive UI.
 
 ## Features
 
@@ -10,6 +10,9 @@ Easily add, edit, delete, and sort tasks with a clean and responsive UI.
 - Delete tasks
 - Sort tasks
 - Search Task
+- Filter Tasks
+- Showing tasks that due today
+- Showing tasks that were expire
 - Minimal and visually appealing design
 
 ## Getting Started
