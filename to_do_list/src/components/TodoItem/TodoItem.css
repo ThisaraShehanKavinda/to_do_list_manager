@@ -157,6 +157,21 @@ margin-left: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.11);
 }
 
+.expired-badge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background-color: #ff4d4d75;
+  color: rgba(4, 56, 80, 0.548);
+  padding: 4px 8px;
+  font-size: 0.5rem;
+  font-weight: bold;
+  border-radius: 4px;
+  z-index: 1;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.123);
+}
+
+
 
 
 

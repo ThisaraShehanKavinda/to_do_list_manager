@@ -17,12 +17,30 @@ function isDueToday(dueDate) {
 }
 
 
+function isExpired(dueDate) {
+  const today = new Date();
+  const taskDate = new Date(dueDate);
+
+  
+  return taskDate < new Date(today.getFullYear(), today.getMonth(), today.getDate());
+}
+
+
+
   return (
     <div className="todo-card">
 
       {isDueToday(todo.dueDate) && (
   <div className="due-today-badge">Due Today</div>
+
+  
 )}
+
+
+{isExpired(todo.dueDate) && (
+  <div className="expired-badge">Expired</div>
+)}
+
 
         <div className="todo-content">
             <div>
