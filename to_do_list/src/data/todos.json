@@ -68,5 +68,117 @@
     "completed": true,
     "priority": "medium",
     "dueDate": "2025-07-02"
+  },
+    {
+    "id": 11,
+    "text": "Schedule Q3 planning meeting",
+    "completed": false,
+    "priority": "high",
+    "dueDate": "2025-07-03"
+  },
+  {
+    "id": 12,
+    "text": "Clean up unused Slack channels",
+    "completed": true,
+    "priority": "low",
+    "dueDate": "2025-06-20"
+  },
+  {
+    "id": 13,
+    "text": "Analyze competitor feature updates",
+    "completed": false,
+    "priority": "medium",
+    "dueDate": "2025-06-28"
+  },
+  {
+    "id": 14,
+    "text": "Create onboarding checklist for new interns",
+    "completed": true,
+    "priority": "medium",
+    "dueDate": "2025-06-22"
+  },
+  {
+    "id": 15,
+    "text": "Finalize UX copy for mobile app",
+    "completed": false,
+    "priority": "high",
+    "dueDate": "2025-06-27"
+  },
+  {
+    "id": 16,
+    "text": "Back up important design files",
+    "completed": false,
+    "priority": "low",
+    "dueDate": "2025-06-30"
+  },
+  {
+    "id": 17,
+    "text": "Send feedback to graphic designer",
+    "completed": true,
+    "priority": "low",
+    "dueDate": "2025-06-25"
+  },
+  {
+    "id": 18,
+    "text": "Test Stripe payment integration",
+    "completed": false,
+    "priority": "high",
+    "dueDate": "2025-06-29"
+  },
+  {
+    "id": 19,
+    "text": "Draft press release for July update",
+    "completed": false,
+    "priority": "medium",
+    "dueDate": "2025-07-02"
+  },
+  {
+    "id": 20,
+    "text": "Conduct customer satisfaction survey",
+    "completed": true,
+    "priority": "high",
+    "dueDate": "2025-07-01"
+  },
+  {
+    "id": 21,
+    "text": "Book venue for leadership offsite",
+    "completed": true,
+    "priority": "medium",
+    "dueDate": "2025-06-26"
+  },
+  {
+    "id": 22,
+    "text": "Organize quarterly budget review",
+    "completed": false,
+    "priority": "medium",
+    "dueDate": "2025-07-05"
+  },
+  {
+    "id": 23,
+    "text": "Update brand guidelines documentation",
+    "completed": true,
+    "priority": "low",
+    "dueDate": "2025-07-03"
+  },
+  {
+    "id": 24,
+    "text": "Evaluate team tools and subscriptions",
+    "completed": false,
+    "priority": "medium",
+    "dueDate": "2025-07-04"
+  },
+  {
+    "id": 25,
+    "text": "Host weekly team sync",
+    "completed": true,
+    "priority": "low",
+    "dueDate": "2025-06-23"
+  },
+  {
+    "id": 26,
+    "text": "Write blog post on AI trends",
+    "completed": false,
+    "priority": "high",
+    "dueDate": "2025-07-06"
   }
 ]
