@@ -1,15 +1,17 @@
-
 import TodoItem from "../TodoItem/TodoItem";
 import "./TodoList.css";
 import SortControl from "../SortControls/SortControl";
 import AddTaskPopup from "../AddTask/AddTaskPopup";
 import EditTaskPopup from "../EditTask/EditTaskPopup";
-import DeleteConfirmPopup from '../DeleteTask/DeleteTaskPopup'
+import DeleteConfirmPopup from "../DeleteTask/DeleteTaskPopup";
 import { useTodoController } from "../../hooks/TodoController";
 import SearchBar from "../SearchBar/SearchBar";
+import StatusFilter from "../StatusFilter/StatusFilter";
+import { useState } from "react";
+import { FaTasks, FaPlus } from "react-icons/fa";
 
 function TodoList() {
- const {
+  const {
     todos: sortedTodos,
     newTodo,
     dueDate,
@@ -21,6 +23,7 @@ function TodoList() {
     todoToDelete,
     sortOrder,
     searchTerm,
+    removingId,
 
     setNewTodo,
     setDueDate,
@@ -40,26 +43,36 @@ function TodoList() {
     toggleTodo,
   } = useTodoController();
 
+  const [filterStatus, setFilterStatus] = useState("All");
+
   return (
     <div className="todo-container">
-
-      
       <p className="welcome-text">My Tasks</p>
+
+      <StatusFilter
+        filterStatus={filterStatus}
+        setFilterStatus={setFilterStatus}
+      />
       <form className="todo-form" onSubmit={addTodo}>
-<SearchBar className="searchbtn" searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-<SortControl sortOrder={sortOrder} setSortOrder={setSortOrder} />
+        <SearchBar
+          className="searchbtn"
+          searchTerm={searchTerm}
+          setSearchTerm={setSearchTerm}
+        />
 
-
-        <button
-          type="button"
-          className="todo-button"
-          onClick={() => setShowPopup(true)}
-        >
-          + Add
-        </button>
+        <SortControl sortOrder={sortOrder} setSortOrder={setSortOrder} />
       </form>
 
-
+      <button
+        type="button"
+        className="add-button"
+        onClick={() => setShowPopup(true)}
+      >
+        <FaTasks className="add-icon" />
+        <span className="add-plus">
+          <FaPlus />
+        </span>
+      </button>
 
       {/* This is the add Task Popup */}
       <AddTaskPopup
@@ -74,8 +87,6 @@ function TodoList() {
         setShowPopup={setShowPopup}
       />
 
-
-
       {/* This is the Edit Task Popup */}
       <EditTaskPopup
         isEditing={isEditing}
@@ -84,8 +95,6 @@ function TodoList() {
         handleUpdate={handleUpdate}
         setIsEditing={setIsEditing}
       />
-
-      
 
       {/* This is the delete Task Popup */}
       <DeleteConfirmPopup
@@ -96,15 +105,24 @@ function TodoList() {
       />
 
       <div data-testid="todo-list" className="todo-list">
-        {sortedTodos.map((todo) => (
-          <TodoItem ata-testid="todo-list"
-            key={todo.id}
-            todo={todo}
-            onToggle={toggleTodo}
-            onDelete={() => handleDelete(todo)}
-            onEdit={handleEdit}
-          />
-        ))}
+        {sortedTodos
+          .filter((todo) => {
+            if (filterStatus === "All") return true;
+            if (filterStatus === "Complete") return todo.completed;
+            if (filterStatus === "Incomplete") return !todo.completed;
+            return true;
+          })
+          .map((todo) => (
+            <TodoItem
+              ata-testid="todo-list"
+              key={todo.id}
+              todo={todo}
+              onToggle={toggleTodo}
+              onDelete={() => handleDelete(todo)}
+              onEdit={handleEdit}
+              isRemoving={removingId === todo.id}
+            />
+          ))}
       </div>
     </div>
   );

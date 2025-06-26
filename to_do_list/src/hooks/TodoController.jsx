@@ -18,6 +18,9 @@ export const useTodoController = () => {
 
   const [searchTerm, setSearchTerm] = useState("");
 
+  const [removingId, setRemovingId] = useState(null);
+
+
   // Load from json file
   useEffect(() => {
     
@@ -73,11 +76,19 @@ const handleUpdate = () => {
     setShowDeleteConfirm(true);
   };
 
-  const confirmDelete = () => {
+const confirmDelete = () => {
+  if (!todoToDelete) return;
+
+  setRemovingId(todoToDelete.id); 
+
+  setTimeout(() => {
     setTodos((prev) => prev.filter((todo) => todo.id !== todoToDelete.id));
     setTodoToDelete(null);
     setShowDeleteConfirm(false);
-  };
+    setRemovingId(null); 
+  }, 300); 
+};
+
 
   // Toggle Completion
   const toggleTodo = (id) => {
@@ -114,6 +125,7 @@ const filteredAndSortedTodos = [...todos]
     sortOrder,
     searchTerm,
     filteredAndSortedTodos,
+    removingId,
     
 
     setNewTodo,

@@ -1,0 +1,29 @@
+.status-filter {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.filter-button {
+  padding: 8px 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 20px;
+  background-color: #f3f4f6;
+  color: #04465d;
+  font-weight: 500;
+  font-size: 0.7rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.filter-button:hover {
+  background-color: #e2e8f0;
+}
+
+.filter-button.active {
+  background-color: #b4f2f8;
+  color: #04465d;
+  border-color: #41c3e800;
+  box-shadow: 0 2px 6px rgba(59, 131, 246, 0.137);
+}

@@ -2,6 +2,7 @@
   margin: 10px 10px;
   left: 35%;
   
+  
 }
 
 .sort-controls label {
@@ -16,6 +17,7 @@
     border-radius: 12px;
     width: 300px;
     border-color: rgb(165, 222, 240);
+    font-size: 11px;
 }
 
 
