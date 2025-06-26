@@ -2,7 +2,7 @@
   position: relative;
   flex: 0 0 calc(33.333% - 20px);
   box-sizing: border-box;
-  /* background-color: #eaf9fa; */
+  
   background: rgba(180, 247, 247, 0.2);
   backdrop-filter: blur(10px);
    border: 1px solid rgba(255, 255, 255, 0.2);
@@ -16,6 +16,9 @@
   transition: transform 0.2s ease, box-shadow 0.3s ease, background-color 0.3s ease;
   border-left: 6px solid rgb(77, 130, 143);
   cursor: pointer;
+  animation: appear linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 30%;
 }
 
 .todo-card:hover {
@@ -174,6 +177,22 @@ margin-left: 10px;
 
 
 
+@keyframes appear {
+  from{
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to{
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+
+
+
+
+
 
 
 
@@ -184,6 +203,11 @@ margin-left: 10px;
   
   flex: 0 0 calc(100% - 20px);
 
+}
+
+.todo-text{
+    margin: 20px;
+    
 }
   
 

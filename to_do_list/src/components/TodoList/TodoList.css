@@ -6,6 +6,7 @@
     border-radius: 8px;
     box-shadow:0 0 10px rgba(0, 0, 0, 0.1) ;
     margin-top: 10px;
+    padding-bottom: 200px;
     
 }
 
@@ -46,22 +47,23 @@
 
 /* using UIVERSE */
 
-.todo-button{
-   padding: 5px 25px;
- border: unset;
- border-radius: 15px;
- color: #2e55af;
- z-index: 1;
- background: #c0e8f5;
- position: relative;
- font-weight: 600;
- font-size: 13px;
- -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
- box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
- transition: all 250ms;
- overflow: hidden;
- margin-right: 10px;
+.todo-button {
+  position: fixed;
+  bottom: 60px;
+  right: 60px;
+  padding: 15px 25px;
+  font-size: 16px;
+  background-color: #04465d;
+  color: #ffffff;
+  border: none;
+  border-radius: 50px;
+  z-index: 2000;
+  font-weight: 600;
+  box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+  transition: all 250ms ease-in-out;
+  cursor: pointer;
 }
+
 
 .todo-button ::before{
    content: "";
@@ -174,6 +176,7 @@ background-color: transparent;
 
   .todo-container{
     margin-top: 10px;
+    padding-bottom: 150px;
   }
 
   .popup-form {

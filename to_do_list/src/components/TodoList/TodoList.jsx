@@ -7,6 +7,12 @@ import EditTaskPopup from "../EditTask/EditTaskPopup";
 import DeleteConfirmPopup from '../DeleteTask/DeleteTaskPopup'
 import { useTodoController } from "../../hooks/TodoController";
 import SearchBar from "../SearchBar/SearchBar";
+import StatusFilter from "../StatusFilter/StatusFilter"; 
+import { useState } from "react";
+
+
+
+
 
 function TodoList() {
  const {
@@ -40,24 +46,36 @@ function TodoList() {
     toggleTodo,
   } = useTodoController();
 
+
+  const [filterStatus, setFilterStatus] = useState("All");
+
+
   return (
     <div className="todo-container">
 
       
       <p className="welcome-text">My Tasks</p>
+
+      <StatusFilter
+  filterStatus={filterStatus}
+  setFilterStatus={setFilterStatus}
+/>
       <form className="todo-form" onSubmit={addTodo}>
+        
+
 <SearchBar className="searchbtn" searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+
 <SortControl sortOrder={sortOrder} setSortOrder={setSortOrder} />
 
+      </form>
 
-        <button
+              <button
           type="button"
           className="todo-button"
           onClick={() => setShowPopup(true)}
         >
           + Add
         </button>
-      </form>
 
 
 
@@ -96,7 +114,15 @@ function TodoList() {
       />
 
       <div data-testid="todo-list" className="todo-list">
-        {sortedTodos.map((todo) => (
+        {sortedTodos
+  .filter((todo) => {
+    if (filterStatus === "All") return true;
+    if (filterStatus === "Complete") return todo.completed;
+    if (filterStatus === "Incomplete") return !todo.completed;
+    return true;
+  })
+  .map((todo) => (
+
           <TodoItem ata-testid="todo-list"
             key={todo.id}
             todo={todo}
