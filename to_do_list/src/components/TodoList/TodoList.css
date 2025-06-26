@@ -47,47 +47,54 @@
 
 /* using UIVERSE */
 
-.todo-button {
+.fab-button {
   position: fixed;
   bottom: 60px;
   right: 60px;
-  padding: 15px 25px;
-  font-size: 16px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
   background-color: #04465d;
   color: #ffffff;
   border: none;
-  border-radius: 50px;
-  z-index: 2000;
-  font-weight: 600;
-  box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
-  transition: all 250ms ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  font-size: 24px;
   cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  z-index: 2000;
+  position: fixed;
 }
 
-
-.todo-button ::before{
-   content: "";
- position: absolute;
- top: 0;
- left: 0;
- height: 100%;
- width: 0;
- border-radius: 15px;
- background-color: #212121;
- z-index: -1;
- -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
- box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
- transition: all 250ms
-}
-
-.todo-button:hover {
+.fab-button:hover {
   background-color: #1c4f82;
-  color: #ffffff;
+  transform: scale(1.05);
 }
 
-.todo-button:hover ::before{
-  width: 100%;
+/* Central icon */
+.fab-icon {
+  font-size: 24px;
 }
+
+/* Bottom-left small plus */
+.fab-plus {
+  position: absolute;
+  bottom: 2px;
+  left: 2px;
+  width: 18px;
+  height: 18px;
+  background-color: #52a4f6;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+}
+
 
 .popup-overlay {
   position: fixed;
@@ -189,16 +196,21 @@ background-color: transparent;
     margin-bottom: 20px;
   }
 
-  .todo-button {
-    position: fixed;
-    bottom: 20px;
-    height: 60px;
-    width: 90px;
-    right: 20px;
-    border-radius: 50px;
-    z-index: 2000;
-    font-size: 14px;
-    margin-right: 0px;
+ .fab-button {
+    width: 50px;
+    height: 50px;
+    right: 35px;
+    bottom: 35px;
+  }
+
+  .fab-icon {
+    font-size: 24px;
+  }
+
+  .fab-plus {
+    width: 16px;
+    height: 16px;
+    font-size: 8px;
   }
 
 

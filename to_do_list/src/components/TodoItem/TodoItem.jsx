@@ -3,7 +3,7 @@ import { FaTrashAlt, FaEdit, FaFlag, FaCalendar } from "react-icons/fa";
 
 import './TodoItem.css'
 
-function TodoItem({ todo, onDelete, onEdit }) {
+function TodoItem({ todo, onDelete, onEdit, isRemoving }) {
 
 function isDueToday(dueDate) {
   const today = new Date();
@@ -28,8 +28,7 @@ function isExpired(dueDate) {
 
 
   return (
-    <div className="todo-card">
-
+    <div className={`todo-card ${isRemoving ? "fade-out" : ""}`}>
       {isDueToday(todo.dueDate) && (
   <div className="due-today-badge">Due Today</div>
 
