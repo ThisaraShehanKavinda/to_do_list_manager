@@ -4,8 +4,26 @@ import { FaTrashAlt, FaEdit, FaFlag, FaCalendar } from "react-icons/fa";
 import './TodoItem.css'
 
 function TodoItem({ todo, onDelete, onEdit }) {
+
+function isDueToday(dueDate) {
+  const today = new Date();
+  const taskDate = new Date(dueDate);
+
+  return (
+    today.getFullYear() === taskDate.getFullYear() &&
+    today.getMonth() === taskDate.getMonth() &&
+    today.getDate() === taskDate.getDate()
+  );
+}
+
+
   return (
     <div className="todo-card">
+
+      {isDueToday(todo.dueDate) && (
+  <div className="due-today-badge">Due Today</div>
+)}
+
         <div className="todo-content">
             <div>
                   <h3 className="todo-text">{todo.text}</h3>

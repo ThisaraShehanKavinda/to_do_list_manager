@@ -143,6 +143,21 @@
 margin-left: 10px;
 }
 
+.due-today-badge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background-color: #a0c7d6;
+  color: rgb(116, 0, 0);
+  padding: 4px 8px;
+  font-size: 0.5rem;
+  font-weight: bold;
+  border-radius: 4px;
+  z-index: 1;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.11);
+}
+
+
 
 
 
