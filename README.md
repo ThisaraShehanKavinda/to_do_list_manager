@@ -43,13 +43,13 @@ npm (v6+) or yarn
 
 ## 📸 Screenshots
 
-### Web View
+### Web View.
 ![web](Screenshots/ss-web-1.png)
 ![web](Screenshots/ss-web-2.png)
 ![web](Screenshots/ss-web-3.png)
 ![web](Screenshots/ss-web-4.png)
 
-### Mobile View
+### Mobile View.
 ![mobile](Screenshots/ss-mobile-1.png)
 ![mobile](Screenshots/ss-mobile-2.png)
 ![mobile](Screenshots/ss-mobile-3.png)
