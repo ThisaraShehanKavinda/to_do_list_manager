@@ -30,9 +30,10 @@ const Header = () => {
       <div className="header-right">
         <div className="notification-wrapper">
           <button className='btn notification-btn' data-label="Notifications" onClick={handleNotificationClick}>
-            <FaBell className='icon' />
+            
+            <FaBell className='icon'  /> {hasNewNotification && <span className="red-dot"></span>}
             Notifications
-            {hasNewNotification && <span className="red-dot"></span>}
+          
           </button>
 
           {showNotificationPopup && (
