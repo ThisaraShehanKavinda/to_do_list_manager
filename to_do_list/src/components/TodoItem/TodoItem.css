@@ -51,6 +51,15 @@
 }
 
 
+.todo-card.due-today {
+  animation: zoomInOut 2s ease-in-out infinite, appear linear;
+  border-left: 6px solid rgb(101, 141, 241);
+  animation-timeline: view();
+  animation-range: entry 0% cover 30%;
+}
+
+
+
 .todo-status.complete {
   background-color: #9beb9d; 
   color: green;
@@ -208,7 +217,14 @@ margin-left: 10px;
 
 
 
-
+@keyframes zoomInOut {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.015);
+  }
+}
 
 
 @media (max-width: 480px) {
