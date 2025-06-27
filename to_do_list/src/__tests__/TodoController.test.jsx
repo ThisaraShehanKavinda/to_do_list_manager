@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
 
 import React from "react";
-import { render, screen, fireEvent } from "@testing-library/react";
+import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import { useTodoController } from "../hooks/TodoController";
 
@@ -161,17 +161,27 @@ describe("useTodoController Hook", () => {
     expect(newCount).toBe(initialCount);
   });
 
-  test("toggles todo completion state", () => {
-    render(<HookWrapper />);
-    const firstTodo = screen.getAllByRole("listitem")[0];
-    expect(firstTodo).toHaveStyle("text-decoration: none");
+  test("toggles todo completion state", async () => {
+  render(<HookWrapper />);
+  const todos = screen.getAllByRole("listitem");
+  const firstIncompleteTodo = todos.find(
+    (todo) => todo.style.textDecoration === "none"
+  );
 
-    fireEvent.click(firstTodo);
-    expect(firstTodo).toHaveStyle("text-decoration: line-through");
+  expect(firstIncompleteTodo).toBeTruthy();
 
-    fireEvent.click(firstTodo);
-    expect(firstTodo).toHaveStyle("text-decoration: none");
+  fireEvent.click(firstIncompleteTodo);
+
+  await waitFor(() => {
+    expect(firstIncompleteTodo).toHaveStyle("text-decoration: line-through");
   });
+
+  fireEvent.click(firstIncompleteTodo);
+
+  await waitFor(() => {
+    expect(firstIncompleteTodo).toHaveStyle("text-decoration: none");
+  });
+});
 
   test("edits a todo item", () => {
     render(<HookWrapper />);
@@ -193,24 +203,24 @@ describe("useTodoController Hook", () => {
     expect(screen.getByText("Updated Task")).toBeInTheDocument();
   });
 
-  test("deletes a todo item after confirmation", () => {
-    render(<HookWrapper />);
-    const firstTodoText = screen
-      .getAllByRole("listitem")[0]
-      .textContent.replace("EditDelete", "");
-    const deleteButton = screen.getAllByText("Delete")[0];
+ test("deletes a todo item after confirmation", async () => {
+  render(<HookWrapper />);
 
-    fireEvent.click(deleteButton);
+  const firstTodoItem = screen.getAllByRole("listitem")[0];
+  const firstTodoText = firstTodoItem.textContent.replace("EditDelete", "").trim();
 
-    expect(
-      screen.getByText(`Confirm delete: ${firstTodoText}`)
-    ).toBeInTheDocument();
+  const deleteButton = screen.getAllByText("Delete")[0];
+  fireEvent.click(deleteButton);
 
-    const confirmButton = screen.getByText("Yes, delete");
-    fireEvent.click(confirmButton);
+  expect(screen.getByText(`Confirm delete: ${firstTodoText}`)).toBeInTheDocument();
 
+  const confirmButton = screen.getByText("Yes, delete");
+  fireEvent.click(confirmButton);
+
+  await waitFor(() => {
     expect(screen.queryByText(firstTodoText)).not.toBeInTheDocument();
   });
+});
 
   test("cancels delete confirmation", () => {
     render(<HookWrapper />);

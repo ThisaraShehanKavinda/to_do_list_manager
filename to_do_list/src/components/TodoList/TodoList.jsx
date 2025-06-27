@@ -66,6 +66,7 @@ function TodoList() {
       <button
         type="button"
         className="add-button"
+        data-testid="add-button"
         onClick={() => setShowPopup(true)}
       >
         <FaTasks className="add-icon" />
