@@ -3,10 +3,15 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import Header from '../components/Header/Header';
+import { TodoProvider } from '../hooks/TodoContext';
 
 describe('Header Component', () => {
   beforeEach(() => {
-    render(<Header />);
+    render(
+    <TodoProvider>
+    <Header />
+  </TodoProvider>
+  );
   });
 
   it('renders the logo image', () => {

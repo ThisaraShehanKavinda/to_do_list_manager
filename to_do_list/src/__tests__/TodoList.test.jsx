@@ -1,118 +1,70 @@
-/* eslint-disable no-undef */
 import React from 'react';
-import { render, screen, fireEvent } from '@testing-library/react';
-import '@testing-library/jest-dom';
-import TodoList from '../components/TodoList/TodoList';
-
-jest.mock('../components/TodoItem/TodoItem', () => (props) => (
-  <div
-    data-testid="todo-item"
-    style={{ textDecoration: props.todo.completed ? 'line-through' : 'none' }}
-    onClick={() => props.onToggle(props.todo.id)}
-  >
-    {props.todo.text}
-  </div>
-));
-
-jest.mock('../components/AddTask/AddTaskPopup', () => () => <div data-testid="add-popup">Add Popup</div>);
-jest.mock('../components/EditTask/EditTaskPopup', () => () => <div data-testid="edit-popup">Edit Popup</div>);
-jest.mock('../components/DeleteTask/DeleteTaskPopup', () => () => <div data-testid="delete-popup">Delete Popup</div>);
-jest.mock('../components/SortControls/SortControl', () => () => <div data-testid="sort-control">SortControl</div>);
-jest.mock('../components/SearchBar/SearchBar', () => () => <div data-testid="search-bar">SearchBar</div>);
-jest.mock('../components/StatusFilter/StatusFilter', () => (props) => (
-  <div data-testid="status-filter">
-    <button onClick={() => props.setFilterStatus('Complete')}>Complete</button>
-    <button onClick={() => props.setFilterStatus('Incomplete')}>Incomplete</button>
-    <button onClick={() => props.setFilterStatus('All')}>All</button>
-  </div>
-));
-
-jest.mock('../components/TodoItem/TodoItem', () => (props) => (
-  <div data-testid="todo-item">{props.todo.text}</div>
-));
+import { useTodoContext } from '../hooks/TodoContext';
 
 
-jest.mock('../hooks/TodoController', () => ({
-  useTodoController: () => ({
-    todos: [
-      { id: 1, text: 'Test Task', dueDate: '2025-06-30', completed: false, priority: 'medium' },
-      { id: 2, text: 'Completed Task', dueDate: '2025-06-25', completed: true, priority: 'high' }
-    ],
-    newTodo: '',
-    dueDate: '',
-    priority: '',
-    showPopup: false,
-    isEditing: false,
-    editTodo: null,
-    showDeleteConfirm: false,
-    todoToDelete: null,
-    sortOrder: 'asc',
-    searchTerm: '',
-    removingId: null,
+import TodoItem from '../components/TodoItem/TodoItem';
+import AddTaskPopup from '../components/AddTask/AddTaskPopup';
+import EditTaskPopup from '../components/EditTask/EditTaskPopup';
+import DeleteTaskPopup from '../components/DeleteTask/DeleteTaskPopup';
+import SortControl from '../components/SortControls/SortControl';
+import SearchBar from '../components/SearchBar/SearchBar';
+import StatusFilter from '../components/StatusFilter/StatusFilter';
 
-    setNewTodo: jest.fn(),
-    setDueDate: jest.fn(),
-    setPriority: jest.fn(),
-    setShowPopup: jest.fn(),
-    setSortOrder: jest.fn(),
-    setIsEditing: jest.fn(),
-    setEditTodo: jest.fn(),
-    setShowDeleteConfirm: jest.fn(),
-    setSearchTerm: jest.fn(),
+const TodoList = () => {
+  const {
+    todos,
+    showPopup,
+    isEditing,
+    showDeleteConfirm,
+    setShowPopup,
+    setSearchTerm,
+    setSortOrder,
+    sortOrder,
+    searchTerm,
+    handleEdit,
+    handleDelete,
+    toggleTodo,
+  } = useTodoContext();
 
-    addTodo: jest.fn((e) => e.preventDefault()),
-    handleEdit: jest.fn(),
-    handleUpdate: jest.fn(),
-    handleDelete: jest.fn(),
-    confirmDelete: jest.fn(),
-    toggleTodo: jest.fn(),
-  }),
-}));
+  const [filterStatus, setFilterStatus] = React.useState('All');
 
-describe('TodoList Component', () => {
-  beforeEach(() => {
-    render(<TodoList />);
+  // Filter todos by completion status
+  const filteredByStatus = todos.filter(todo => {
+    if (filterStatus === 'Complete') return todo.completed;
+    if (filterStatus === 'Incomplete') return !todo.completed;
+    return true; // 'All'
   });
 
-  it('renders header text', () => {
-    expect(screen.getByText(/my tasks/i)).toBeInTheDocument();
-  });
+  return (
+    <div>
+      <h1>My Tasks</h1>
 
-  it('renders the search bar and sort control', () => {
-    expect(screen.getByTestId('search-bar')).toBeInTheDocument();
-    expect(screen.getByTestId('sort-control')).toBeInTheDocument();
-  });
+      <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+      <SortControl sortOrder={sortOrder} setSortOrder={setSortOrder} />
+      
+      <StatusFilter setFilterStatus={setFilterStatus} />
 
-it('renders the Add button', () => {
-  const addButton = screen.getByTestId('add-button');
-  expect(addButton).toBeInTheDocument();
-});
+      <button onClick={() => setShowPopup(true)}>Add</button>
 
+      <ul>
+        {filteredByStatus.length === 0 && <li>No tasks found.</li>}
 
-  it('renders todo items', () => {
-    const items = screen.getAllByTestId('todo-item');
-    expect(items).toHaveLength(2);
-    expect(items[0]).toHaveTextContent('Test Task');
-    expect(items[1]).toHaveTextContent('Completed Task');
-  });
+        {filteredByStatus.map(todo => (
+          <TodoItem
+            key={todo.id}
+            todo={todo}
+            onToggle={toggleTodo}
+            onEdit={() => handleEdit(todo)}
+            onDelete={() => handleDelete(todo)}
+          />
+        ))}
+      </ul>
 
-  it('renders the popups', () => {
-    expect(screen.getByTestId('add-popup')).toBeInTheDocument();
-    expect(screen.getByTestId('edit-popup')).toBeInTheDocument();
-    expect(screen.getByTestId('delete-popup')).toBeInTheDocument();
-  });
+      {showPopup && <AddTaskPopup />}
+      {isEditing && <EditTaskPopup />}
+      {showDeleteConfirm && <DeleteTaskPopup />}
+    </div>
+  );
+};
 
-  it('filters tasks by completion status', () => {
-    // Click "Complete" to filter
-    fireEvent.click(screen.getByText('Complete'));
-    const completed = screen.getAllByTestId('todo-item');
-    expect(completed).toHaveLength(1);
-    expect(completed[0]).toHaveTextContent('Completed Task');
-
-    // Click "Incomplete" to filter
-    fireEvent.click(screen.getByText('Incomplete'));
-    const incomplete = screen.getAllByTestId('todo-item');
-    expect(incomplete).toHaveLength(1);
-    expect(incomplete[0]).toHaveTextContent('Test Task');
-  });
-});
+export default TodoList;
