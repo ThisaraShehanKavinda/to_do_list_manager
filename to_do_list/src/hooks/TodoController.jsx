@@ -1,11 +1,11 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 import todosData from "../data/todos.json";
 
 export const useTodoController = () => {
   const [todos, setTodos] = useState([]);
-  const [newTodo, setNewTodo] = useState('');
-  const [dueDate, setDueDate] = useState('');
-  const [priority, setPriority] = useState('medium');
+  const [newTodo, setNewTodo] = useState("");
+  const [dueDate, setDueDate] = useState("");
+  const [priority, setPriority] = useState("medium");
 
   const [showPopup, setShowPopup] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
@@ -14,61 +14,67 @@ export const useTodoController = () => {
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
   const [todoToDelete, setTodoToDelete] = useState(null);
 
-  const [sortOrder, setSortOrder] = useState('asc');
+  const [sortOrder, setSortOrder] = useState("asc");
 
   const [searchTerm, setSearchTerm] = useState("");
 
   const [removingId, setRemovingId] = useState(null);
 
+  const [notifications, setNotifications] = useState([]);
+  const [hasNewNotification, setHasNewNotification] = useState(false);
 
   // Load from json file
   useEffect(() => {
-    
     setTodos(todosData);
   }, []);
 
-
-
   // Add Todo
   const addTodo = (e) => {
-    e.preventDefault();
-    if (newTodo.trim() === '') return;
+  e.preventDefault();
+  if (newTodo.trim() === '') return;
 
-    const newItem = {
-      id: Date.now(),
-      text: newTodo,
-      dueDate,
-      priority,
-      completed: false,
-    };
-
-    setTodos([...todos, newItem]);
-    setNewTodo('');
-    setDueDate('');
-    setPriority('medium');
-    setShowPopup(false);
+  const newItem = {
+    id: Date.now(),
+    text: newTodo,
+    dueDate,
+    priority,
+    completed: false,
   };
 
+  setTodos([...todos, newItem]);
+  setNewTodo('');
+  setDueDate('');
+  setPriority('medium');
+  setShowPopup(false);
+
+  // Add a new notification
+  setNotifications((prev) => [
+    ...prev,
+    { id: Date.now(), message: `New task added: "${newTodo}"` },
+  ]);
+  setHasNewNotification(true); // Trigger red dot
+};
+
+const clearNotifications = () => {
+  setHasNewNotification(false);
+};
+
+
   // Edit Todo
-const handleEdit = (todo) => {
-  setEditTodo({ ...todo });  
-  setIsEditing(true);
-};
+  const handleEdit = (todo) => {
+    setEditTodo({ ...todo });
+    setIsEditing(true);
+  };
 
+  const handleUpdate = () => {
+    if (!editTodo) return;
 
-const handleUpdate = () => {
-  if (!editTodo) return;
-
-  setTodos((prevTodos) =>
-    prevTodos.map((todo) =>
-      todo.id === editTodo.id ? editTodo : todo
-    )
-  );
-  setIsEditing(false);
-  setEditTodo(null);
-};
-
-
+    setTodos((prevTodos) =>
+      prevTodos.map((todo) => (todo.id === editTodo.id ? editTodo : todo))
+    );
+    setIsEditing(false);
+    setEditTodo(null);
+  };
 
   // Delete Todo
   const handleDelete = (todo) => {
@@ -76,19 +82,18 @@ const handleUpdate = () => {
     setShowDeleteConfirm(true);
   };
 
-const confirmDelete = () => {
-  if (!todoToDelete) return;
+  const confirmDelete = () => {
+    if (!todoToDelete) return;
 
-  setRemovingId(todoToDelete.id); 
+    setRemovingId(todoToDelete.id);
 
-  setTimeout(() => {
-    setTodos((prev) => prev.filter((todo) => todo.id !== todoToDelete.id));
-    setTodoToDelete(null);
-    setShowDeleteConfirm(false);
-    setRemovingId(null); 
-  }, 300); 
-};
-
+    setTimeout(() => {
+      setTodos((prev) => prev.filter((todo) => todo.id !== todoToDelete.id));
+      setTodoToDelete(null);
+      setShowDeleteConfirm(false);
+      setRemovingId(null);
+    }, 300);
+  };
 
   // Toggle Completion
   const toggleTodo = (id) => {
@@ -99,18 +104,16 @@ const confirmDelete = () => {
     );
   };
 
- 
-
   // Filtered and sorted todos (create filter and sorting both together)
-const filteredAndSortedTodos = [...todos]
-  .filter((todo) =>
-    todo.text.toLowerCase().includes(searchTerm.toLowerCase())
-  )
-  .sort((a, b) => {
-    const dateA = new Date(a.dueDate);
-    const dateB = new Date(b.dueDate);
-    return sortOrder === "asc" ? dateA - dateB : dateB - dateA;
-  });
+  const filteredAndSortedTodos = [...todos]
+    .filter((todo) =>
+      todo.text.toLowerCase().includes(searchTerm.toLowerCase())
+    )
+    .sort((a, b) => {
+      const dateA = new Date(a.dueDate);
+      const dateB = new Date(b.dueDate);
+      return sortOrder === "asc" ? dateA - dateB : dateB - dateA;
+    });
 
   return {
     todos: filteredAndSortedTodos,
@@ -126,7 +129,9 @@ const filteredAndSortedTodos = [...todos]
     searchTerm,
     filteredAndSortedTodos,
     removingId,
-    
+      notifications,
+  hasNewNotification,
+  
 
     setNewTodo,
     setDueDate,
@@ -144,6 +149,6 @@ const filteredAndSortedTodos = [...todos]
     handleDelete,
     confirmDelete,
     toggleTodo,
-    
+    clearNotifications,
   };
 };

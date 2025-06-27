@@ -4,7 +4,8 @@ import SortControl from "../SortControls/SortControl";
 import AddTaskPopup from "../AddTask/AddTaskPopup";
 import EditTaskPopup from "../EditTask/EditTaskPopup";
 import DeleteConfirmPopup from "../DeleteTask/DeleteTaskPopup";
-import { useTodoController } from "../../hooks/TodoController";
+import { useTodoContext } from '../../hooks/TodoContext';
+
 import SearchBar from "../SearchBar/SearchBar";
 import StatusFilter from "../StatusFilter/StatusFilter";
 import { useState } from "react";
@@ -41,7 +42,7 @@ function TodoList() {
     handleDelete,
     confirmDelete,
     toggleTodo,
-  } = useTodoController();
+  } = useTodoContext();
 
   const [filterStatus, setFilterStatus] = useState("All");
 
