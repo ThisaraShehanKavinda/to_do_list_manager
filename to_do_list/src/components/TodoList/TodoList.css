@@ -1,13 +1,13 @@
-.todo-container {
-  background-color: white;
-  width: 100%;                 /* Full width */
-  max-width: 1440px;           /* Optional: limit max width */
-  margin: 0 auto;
-  padding: 30px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  margin-top: 10px;
-  padding-bottom: 200px;
+.todo-container{
+    background-color: white;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow:0 0 10px rgba(0, 0, 0, 0.1) ;
+    margin-top: 10px;
+    padding-bottom: 200px;
+    
 }
 
 .todo-list {
