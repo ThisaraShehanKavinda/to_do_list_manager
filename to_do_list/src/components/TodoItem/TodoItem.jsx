@@ -28,7 +28,8 @@ function isExpired(dueDate) {
 
 
   return (
-    <div className={`todo-card ${isRemoving ? "fade-out" : ""}`}>
+    <div className={`todo-card ${isRemoving ? "fade-out" : ""} ${isDueToday(todo.dueDate) ? "due-today" : ""}`}>
+
       {isDueToday(todo.dueDate) && (
   <div className="due-today-badge">Due Today</div>
 
