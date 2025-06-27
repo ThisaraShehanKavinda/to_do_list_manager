@@ -154,4 +154,22 @@
   border-radius: 50%;
   display: inline-block;
 }
+
+.notification-popup {
+  position: absolute;
+  top: 25px;
+  right: 0;
+  width: 150px;
+  z-index: 999;
+  padding: 5px;
+}
+
+.btn:hover {
+  /* Hide text by default */
+  text-indent: -9999px; 
+  overflow: hidden;
+  white-space: nowrap;
+  width: 32px;
+  padding: 2px;
+}
 }
