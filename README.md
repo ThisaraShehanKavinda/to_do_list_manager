@@ -1,6 +1,6 @@
 # To-Do List Manager
 
-A minimal and modern To-Do List Manager built with React.  
+A minimal, modern, and responsive To-Do List Manager built with React and Redux.  
 Easily add, edit, delete, search, filter and sort tasks with a clean and responsive UI.
 
 ## Features
@@ -14,6 +14,17 @@ Easily add, edit, delete, search, filter and sort tasks with a clean and respons
 - Showing tasks that due today
 - Showing tasks that were expire
 - Minimal and visually appealing design
+- Centralized state management with Redux
+
+##Tech Stack
+React – Component-based frontend library
+
+Redux – State management
+
+JavaScript (ES6+) – Modern JavaScript features
+
+CSS Modules / Styled Components – Scoped and maintainable styles
+
 
 ## Getting Started
 
