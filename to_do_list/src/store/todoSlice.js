@@ -1,7 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-
-
 const todoSlice = createSlice({
   name: 'todos',
   initialState: {
@@ -33,8 +31,17 @@ const todoSlice = createSlice({
     setSearchTerm: (state, action) => {
       state.searchTerm = action.payload;
     },
+     setShowDeleteConfirm: (state, action) => {
+    state.showDeleteConfirm = action.payload;
+  },
     setShowPopup: (state, action) => {
       state.showPopup = action.payload;
+    },
+    setIsEditing: (state, action) => {
+      state.isEditing = action.payload;
+    },
+    setEditTodo: (state, action) => {
+      state.editTodo = action.payload;
     },
     addTodo: (state) => {
       if (state.newTodo.trim() === '') return;
@@ -98,6 +105,9 @@ export const {
   setPriority,
   setSearchTerm,
   setShowPopup,
+  setIsEditing,
+  setShowDeleteConfirm,
+  setEditTodo,
   addTodo,
   toggleTodo,
   handleEdit,
