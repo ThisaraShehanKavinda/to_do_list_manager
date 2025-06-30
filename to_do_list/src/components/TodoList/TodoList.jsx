@@ -4,16 +4,35 @@ import SortControl from "../SortControls/SortControl";
 import AddTaskPopup from "../AddTask/AddTaskPopup";
 import EditTaskPopup from "../EditTask/EditTaskPopup";
 import DeleteConfirmPopup from "../DeleteTask/DeleteTaskPopup";
-import { useTodoContext } from '../../hooks/TodoContext';
-
 import SearchBar from "../SearchBar/SearchBar";
 import StatusFilter from "../StatusFilter/StatusFilter";
 import { useState } from "react";
 import { FaTasks, FaPlus } from "react-icons/fa";
 
+import { useSelector, useDispatch } from "react-redux";
+import {
+  setNewTodo,
+  setDueDate,
+  setPriority,
+  setShowPopup,
+  setSortOrder,
+  setIsEditing,
+  setEditTodo,
+  setShowDeleteConfirm,
+  setSearchTerm,
+  addTodo,
+  handleEdit,
+  handleUpdate,
+  handleDelete,
+  confirmDelete,
+  toggleTodo,
+} from "../../store/todoSlice"; 
+
 function TodoList() {
+  const dispatch = useDispatch();
+
   const {
-    todos: sortedTodos,
+    items,
     newTodo,
     dueDate,
     priority,
@@ -25,50 +44,49 @@ function TodoList() {
     sortOrder,
     searchTerm,
     removingId,
-
-    setNewTodo,
-    setDueDate,
-    setPriority,
-    setShowPopup,
-    setSortOrder,
-    setIsEditing,
-    setEditTodo,
-    setShowDeleteConfirm,
-    setSearchTerm,
-
-    addTodo,
-    handleEdit,
-    handleUpdate,
-    handleDelete,
-    confirmDelete,
-    toggleTodo,
-  } = useTodoContext();
+  } = useSelector((state) => state.todos);
 
   const [filterStatus, setFilterStatus] = useState("All");
+
+  // Filter & sort todos
+  const sortedTodos = [...items]
+    .filter((todo) => todo.text.toLowerCase().includes(searchTerm.toLowerCase()))
+    .sort((a, b) => {
+      const dateA = new Date(a.dueDate);
+      const dateB = new Date(b.dueDate);
+      return sortOrder === "asc" ? dateA - dateB : dateB - dateA;
+    });
 
   return (
     <div className="todo-container">
       <p className="welcome-text">My Tasks</p>
 
-      <StatusFilter
-        filterStatus={filterStatus}
-        setFilterStatus={setFilterStatus}
-      />
-      <form className="todo-form" onSubmit={addTodo}>
+      <StatusFilter filterStatus={filterStatus} setFilterStatus={setFilterStatus} />
+
+      <form
+        className="todo-form"
+        onSubmit={(e) => {
+          e.preventDefault();
+          dispatch(addTodo());
+        }}
+      >
         <SearchBar
           className="searchbtn"
           searchTerm={searchTerm}
-          setSearchTerm={setSearchTerm}
+          setSearchTerm={(value) => dispatch(setSearchTerm(value))}
         />
 
-        <SortControl sortOrder={sortOrder} setSortOrder={setSortOrder} />
+        <SortControl
+          sortOrder={sortOrder}
+          setSortOrder={(value) => dispatch(setSortOrder(value))}
+        />
       </form>
 
       <button
         type="button"
         className="add-button"
         data-testid="add-button"
-        onClick={() => setShowPopup(true)}
+        onClick={() => dispatch(setShowPopup(true))}
       >
         <FaTasks className="add-icon" />
         <span className="add-plus">
@@ -76,36 +94,37 @@ function TodoList() {
         </span>
       </button>
 
-      {/* This is the add Task Popup */}
+      {/* Add Task Popup */}
       <AddTaskPopup
         showPopup={showPopup}
         newTodo={newTodo}
         dueDate={dueDate}
         priority={priority}
-        setNewTodo={setNewTodo}
-        setDueDate={setDueDate}
-        setPriority={setPriority}
-        addTodo={addTodo}
-        setShowPopup={setShowPopup}
+        setNewTodo={(value) => dispatch(setNewTodo(value))}
+        setDueDate={(value) => dispatch(setDueDate(value))}
+        setPriority={(value) => dispatch(setPriority(value))}
+        addTodo={() => dispatch(addTodo())}
+        setShowPopup={(value) => dispatch(setShowPopup(value))}
       />
 
-      {/* This is the Edit Task Popup */}
+      {/* Edit Task Popup */}
       <EditTaskPopup
         isEditing={isEditing}
         editTodo={editTodo}
-        setEditTodo={setEditTodo}
-        handleUpdate={handleUpdate}
-        setIsEditing={setIsEditing}
+        setEditTodo={(value) => dispatch(setEditTodo(value))}
+        handleUpdate={() => dispatch(handleUpdate())}
+        setIsEditing={(value) => dispatch(setIsEditing(value))}
       />
 
-      {/* This is the delete Task Popup */}
+      {/* Delete Task Popup */}
       <DeleteConfirmPopup
         showDeleteConfirm={showDeleteConfirm}
         todoToDelete={todoToDelete}
-        confirmDelete={confirmDelete}
-        setShowDeleteConfirm={setShowDeleteConfirm}
+        confirmDelete={() => dispatch(confirmDelete())}
+        setShowDeleteConfirm={(value) => dispatch(setShowDeleteConfirm(value))}
       />
 
+      {/* Todo List */}
       <div data-testid="todo-list" className="todo-list">
         {sortedTodos
           .filter((todo) => {
@@ -116,12 +135,11 @@ function TodoList() {
           })
           .map((todo) => (
             <TodoItem
-              ata-testid="todo-list"
               key={todo.id}
               todo={todo}
-              onToggle={toggleTodo}
-              onDelete={() => handleDelete(todo)}
-              onEdit={handleEdit}
+              onToggle={() => dispatch(toggleTodo(todo.id))}
+              onDelete={() => dispatch(handleDelete(todo))}
+              onEdit={() => dispatch(handleEdit(todo))}
               isRemoving={removingId === todo.id}
             />
           ))}
